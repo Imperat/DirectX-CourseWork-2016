@@ -1,0 +1,185 @@
+1. Григорьев А.Б. Методы и алгоритмы компьютерной графики для моделирования природных явлений и объектов в системах виртуальной реальности, Диссертация . к.т.н, Санкт-Петербург, 2000, 126 с.
+
+2. Ebert, David, Musgrave, F. Kenton, Peachey, Darwyn, Perlin, Ken, and Worley, Steve. Texturing and Modeling: A Procedural Approach. AP Professional, Boston, MA, 1994. P.415.
+
+3. Jerry Tessendorf. "Simulating Ocean Water". In SIGGRAPH 2002 Course Notes #9 (Simulating Nature: Realistic and Interactive Techniques) (2002), ACM Press.
+
+4. Lasse Jensen. "Deep-Water Animation and Rendering". Gamasutra, September 26,2001. http://www.gamasutra.com/gdce/iensen/jensen 01 .htm
+
+5. James D. Foley, Andreis van Dam, Steven K. Feiner, John F. Hughes. Computer Graphics. Principles and Practice. Addison-Wesley Publishing Company, 1996
+
+6. T. Akenine-Moller and E. Haines. Real-Time Rendering. 2nd edition. А К Peters,2002, P. 835.
+
+7. J. Kautz. Hardware Rendering with Bidirectional Reflectances. Technical Report CS-99-02, University of Waterloo, 1999.
+
+8. D. McAllister, A. Lastra, and W. Heidrich. Efficient rendering of spatial bidirectional reflectance distribution functions. In Proceedings of the 17th Eurographics/SIGGRAPH workshop on graphics hardware, pages 79-88, Sept. 2002.
+
+9. Enright, D. Marschner, S. Fedkiw, R., Animation and Rendering of Complex Water Surfaces, ACM Transactions on Graphics 21,3 (2002), p. 736-744.
+
+10. Foster, N. and Metaxas, D., "Realistic Animation of Liquids", Graphical Models and Image Processing 58, p. 471-483 (1996).
+
+11. Stam, J., "Stable Fluids", ACM SIGGRAPH 99, p. 121-128 (1999).
+
+12. Foster, N. and Fedkiw, R., Practical Animation of Liquids. ACM SIGGRAPH 2001, p. 12-17 August 2001.
+
+13. Harlow, F.H. and Welch, J.E., "Numerical Calculation of Time-Dependent Viscous Incompressible Flow of Fluid with a Free Surface", The Physics of Fluids 8, p. 2182-2189 (1965).
+
+14. Темам P. Уравнения Навье-Стокса. M.: Мир, 1981.
+
+15. Ньюмен Дж. Морская гидродинамика. Л.: Судостроение, 1985. - 368 с.
+
+16. Лойцянский Л. Г. Механика жидкости и газа. М.: Наука, 1970. - 904 с.
+
+17. Габов С. А. Введение в теорию нелинейных волн. М.: Изд-во МГУ, 1988. -176 с.
+
+18. Tanizawa К. The state of the art on numerical wave tank. Proceedings of 4th Osaka Colloquium on Seakeeping Performance of Ships, Osaka, Japan, 17-21 October, 2000, pp.95-114.
+
+19. Belaev V. S., Grigoriev B. S. Simulation of waves in near-shore zone for real time applications // Proceedings of SPAS, NDTCS-2003. Vol. 7. St. Petersburg. 2003.
+
+20. Дж. Дж. Стокер. Волны на воде. Математическая теория и приложения. М.: ИЛ, 1959. 618 с.
+
+21. Вольцингер Н. Е., Клеванный К. А., Пелиновский Е. Н. Длинноволновая динамика прибрежной зоны. Л.: Гидрометеоиздат, 1989. 271 с.
+
+22. Лятхер В. М., Милитеев В. Н. Гидравлические исследования численными методами // Гидротехническое строительство. 1981. № 3. С. 60-79.
+
+23. Пелиновский Е. Н. Гидродинамика волн цунами / ИПФ РАН. Нижний Новгород, 1996. 276 с.
+
+24. Kass, М. and Miller, G., "Rapid, Stable Fluid Dynamics for Computer Graphics", Proceedings of S1GGRAPH 90, 24(3), pp. 49-57 (1990).
+
+25. Layton, А. Т., "Numerically Efficient and Stable Algorithm for Animating Water Waves", Visual Computer, Vol. 18, No. 1, pp. 41-53, 2002.
+
+26. Chen, J. and Lobo, N., "Toward Interactive-Rate Simulation of Fluids with Moving Obstacles Using the Navier-Stokes Equations", Graphical Models and Image Processing 57, p. 107-116 (1994).
+
+27. Schachter, В., "Long Crested Wave Models", Computer Graphics and Image Processing 12, p. 187-201 (1980).
+
+28. Fournier, A. and Reeves, W. Т., "A Simple Model of Ocean Waves", ACM SIGGRAPH 86, p. 75-84 (1986).
+
+29. Peachy, D., "Modeling Waves and Surf', ACM SIGGRAPH 86, p. 65-74 (1986).
+
+30. Khan R. A simple model of ship waves. M.Sc. thesis. Department of Computer Science, University of British Columbia. 1994.
+
+31. Триккер P. Бор, прибой, волнение и корабельные волны. Л.: Гидрометеоиздат. 1969. 286 с.
+
+32. Ле Меоте Б. Введение в гидродинамику и теорию волн на воде. Л.: Гидрометеоиздат, 1974. 367 с.
+
+33. Курант Р., Фридрихе К. Сверхзвуковое течение и ударные волны. М.: ИЛ, 1950. 426 с.
+
+34. Дафермос К. М. Квазилинейные гиперболические системы, вытекающие из законов сохранения. В сб. Нелинейные волны. М.: Мир, 1977. 319с.
+
+35. Rayleigh. On the theory of long waves and bores // Proc. Roy. Soc. London. Ser. A. Vol. 90. 1914.
+
+36. Годунов С. К. Разностный метод численного расчета разрывных решений уравнений гидродинамики // Математический сборник. 1959. Т. 47, вып. 3. С. 271306.
+
+37. Колган В. П. Применение принципа минимальных значений производных к построению конечно-разностных схем для расчета разрывных решений газовой динамики // Ученые записки ЦАГИ. 1972. Т. 3, № 6. С. 68-77.
+
+38. Van Leer В. Towards the ultimate conservative difference scheme. V. A second order sequel to Godunov's methods // J. of Сотр. Phys., 1979. V. 32. No 1. P. 101-136.
+
+39. Беликов В. В., Семенов А. Ю. Построение численных методов распада разрыва для решения уравнений мелкой воды. Труды ИОФАН. Том 53. Вычислительная гидродинамика природных течений. М.: Наука. 1997. С. 5-43.
+
+40. Harten A., High resolution schemes for hyperbolic conservation laws // J. of Сотр. Phys., 1983. V. 49. P. 357-393.
+
+41. Harten A., Osher S. Uniformly high-order accurate nonoscillatory schemes. I. // SI AM J. Numer. Anal. Vol.24. No 2. 1987. P. 279-309.
+
+42. Chacravarthy S. R., Anderson D. A., Salas M. D. The split-coefficiet matrix method for hyperbolic systems of gasdynamic equations. AIAA Paper 80-0268. 1980.
+
+43. Steger J. L., Warming R. F. Flux-vector splitting of the inviscid gas dynamic equations with application to finite-difference methods // J. Comput. Phys. 1981. Vol. 40. N2. Pp. 263-293.
+
+44. Van Leer B. Flux-vector splitting for the Euler equations. Lecture Notes in Phys. 1982. V. 170. P. 507-512.
+
+45. Anderson W. K., Thomas J. L., Van Leer B. Comparison of finite volume flux vector splittings for the Euler equations // AIAA Journal. 1986. V. 24. P. 1453-1460.
+
+46. Cockburn В., Karniadakis G., and Shu C.-W. (editors). Discontinuous Galerkin Methods: Theory, Computation and Applications. Lecture Notes in Computational Science and Engineering. Vol. 11. Berlin, Springer. 2000.
+
+47. Самарский А. А. Теория разностных схем. M.: Наука. 1989. 616 с.
+
+48. Повещенко Ю. А., Попов С. Б., Сыроватская Т. Н. Исследование устойчивости двухслойных разностных схем газовой динамики в переменных Эйлера / ИПМ АН СССР. Препринт № 119. 1988. 30 с.
+
+49. Roe P. L. Approximate Riemann solvers, parameter vectors and difference schemes //J. Comput. Phys. 1981. Vol. 43. No 2. P. 357-372.
+
+50. Courant R., Isaacson E., Rees M. On the solution of nonlinear hyperbolic differential equations by finite differences // Commun. Pure Appl. Math. 1952. Vol. 5. No 3. P. 243-255.
+
+51. Papa L. Application of the Courant-Isaacson-Rees method to solve the shallow-water hydrodynamic equations // Appl. Math. Comput. 1984. Vol. 15. N 1. Pp. 85-92.
+
+52. Lax P. D. Weak solutions of nonlinear hyperbolic equations and their numerical computation // Commun. Pure Appl. Math. 1954. Vol. 7. N 1. Pp. 159-193.
+
+53. Андерсон Д., Таннехилл Дж., Плетчер Р. Вычислительная гидромеханика и теплообмен. Т. 1. М.: Мир, 1990. 384 с.
+
+54. Proft J. К. Adaptive Stencil and Discontinuous Galerkin Methods for Transport Equations on Triangular Grids. The University of Texas at Austin. 1999. 27 p.
+
+55. Shu C.-W. Total variation diminishing time discretizations. SIAM J. Sci. Stat. Comput. Vol. 9. 1988. Pp. 1073-1084.
+
+56. Gotlieb S. and Shu C.-W. Total variation diminishing Runge-Kutta schemes. Math. Comput. 1998. Vol. 67. N 221. Pp. 73-85.
+
+57. Shu C.-W. TVB uniformly high-order schemes for conservation laws // Math. Comput. 1987. Vol. 49. N 179. Pp. 105-121.
+
+58. Беляев B.C. Моделирование водной поверхности для графических приложений реального времени, Диссертация . магистра, Санкт-Петербург, 2002, 113 с.
+
+59. Норре Н., Progressive meshes, SIGGRAPH 96 Conference Proceedings, pp. 99108.
+
+60. Thatcher Ulrich. Continuous LOD Terrain Meshing Using Adaptive Quadtrees. Gamasutra, February 28, 2000,htto://www.eamasutra.com/features/200000228/ulrich 01 .htm
+
+61. Bryan Turner. Real-Time Dynamic Level of Detail Terrain Rendering with ROAM. Gamasutra, April 03, 2000,http://www.gamasutra.com/features/2000004Q3/turner 01 .htm
+
+62. Bryan Turner. ROAM, PhD Thesis, Umea University, 2001.http://www.cs.umu.se/~tdv94aog/ROAM.pdf
+
+63. Brian Sharp, Subdivision Surface Theory, Gamasutra, April 11, 2000, http://www.gamasutra.com/features/20000411/sharp 01.htm
+
+64. Mike Rayner. Dynamic Level of Detail Terrain Rendering with Bezier Patches. Gamasutra, March 21, 2000,http://www.gamasutra.com/gdc2002/features/ravner/rayner 01 .htm
+
+65. У. Прэтт, Цифровая Обработка Изображений, Мир, М., 1982
+
+66. G. М. Johnson, Computer Synthesis of Spectroradiometric Images for Color Imaging Systems Analisis, http://www.cis.rit.edu/research/mcsl/research/gmjthes.pdf
+
+67. H. Г. Ерлов. Оптика моря. JI.: Гидрометеоиздат, 1980. 248 с.
+
+68. Оптика океана. Т. 1. Физическая оптика океана. АН СССР. Ин-т океанологии им. Ширшова; 1983
+
+69. Curtis D. Mobley, Bernard Gentili, Howard R. Gordon, et al, "Coparision of numerical models for computing underwater lightfields", Applied Optics, Vol. 32, No. 32, 1993, pp. 7484-7504.
+
+70. Alan Watt, Mark Watt, Advanced Animation and Rendering Techniques, ACM Press, New York, 1992, P. 455.
+
+71. А. Исимару. Распространение и рассеяние волн в случайно-неоднородных средах. Т. 1. М.: Мир, 1981. 280 с
+
+72. J. Ronald V. Zaneveld,W. Scott Pegau, "Robust Underwater Visibility Parameter", Optics Experess, Vol. 11, No. 23, 2003, pp. 2997-3009.
+
+73. S. Premoze, M. Ashikhmin, "Rendering Natural Waters," Proceedings of the 8th Pacific Conference on Computer Graphics and Applications, Volume 20 (2001), number 4 pp. 189-199
+
+74. Kei Iwasaki, Yoshinori Dobashi, Tomoyouki Nishita, "A Volume Rendering Approach for Sea Surfaces Taking into Account Second Order Scattering Using Scattering Maps", Volume Graphics (2003)
+
+75. Andre Morel, Kenneth J. Voss, Bernard Gentili, Bidirectional reflectance of oceanic waters: A comparision of modeled and measured upward radiance fields, Journal of Geophysical Research, Vol. 100, No. C7, 1995, pp. 143-150.
+
+76. Stephane Maritorena, Andre Morel and Bernard Gentili, "Diffuse reflectance of oceanic shallow waters: Influence of water depth and bottom albedo", Limnol. Oceanogr., 39(7), 1994, pp. 1689-1703
+
+77. Curtis D. Mobley, Dariusz Stramski, W. Paul Bissett, Emmanuel Boss, Optical Modeling of Ocean Water. Is the Case 1 Case 2 Classification Still Useful?, Oceanography, Volume 17, Number 2. pp. 61-67.
+
+78. А. Иванов. Введение в океанографию М.: Мир, 1978. 574 с.
+
+79. Victor I. Mankovsky, and Vladimir I. Haltrin, Light Scattering Phase Functions Measured in Waters of Mediterranean Sea, Oceans '02 MTS/IEEE, Volume 4, pp. 23682373.
+
+80. Andre Morel and Louis Prieur, Analysis of variations in ocean color, Limnology and Oceanography, July 1977, v. 22(4), pp. 709-722.
+
+81. J. von Kriez, "Chromatic Adaptation", Festchrift der Albrect-Ludwig-Universitat (Friboung) (1902) Translation: D.L. MacAdam, Sources of Color Science, MIT Press, Cambridge, Mass. (1970).
+
+82. M.D. Fairchild and G.M. Johnson, Meet iCAM: A next-generation color appearance model, IS&T/SID 10 Color Imaging Conference (2002), Scottsdale, pp. 33-38.
+
+83. J. Tumblin, H. Rushmeier. Tone Reproduction for Realistic images. IEEE Computer graphics and Applications, 13(6):42--48, 1993.
+
+84. J. Tumblin. Three Methods of Detail-Preserving Contrast Reduction for Displayed Images. PhD thesis, Georgia Institute of Technology, December 1999.
+
+85. Ward, G. (1994) A Contrast-based Scalefactor for Luminance Display. In P.S. Heckbert (Ed.), Graphics Gems IV, Boston: Academic Press Professional.
+
+86. E. Reinhard, M. Stark, P. Shirley, and J. Ferwerda. Photographic tone reproduction for digital images. ACM Transactions on Graphics, 21(3):267-276, July 2002.
+
+87. Boris Barladian, Robust Parameter Estimation for Tone Mapping Operator. GraphiCon-2003, Conference Proceedings, ООО "MAX Press", 2003, pp. 106-111.
+
+88. S. N. Pattanaik, J. A. Ferwerda, J. A. Fairchild, and D. P. Greenberg, A Multiscale Model of Adaptation and Spatial Vision for Realistic Image Display, Computer Graphics Proceedings, Annual Conference Series, pp. 287-298, ACM SIGGRAPH.
+
+89. Sumanta Pattanaik and Hector Yee, Adaptive Gain Control for High Dynamic Range Image Display, Spring Conference on Computer Graphics, Budmerice, Slovakia.
+
+90. Michael Ashikhmin, A Tone Mapping Algorithm for High Contrast Images, Eurographics Workshop on Rendering (2002), pp. 1-11.
+
+91. Jan Kautz, P.-P. Vazquez, W. Heidrich, H.-P. Seidel. A Unified Approach to Prefiltered Environment Maps, 11th Eurographics Workshop on Rendering, pp. 185-196, June, 2000.
+
+
+
+Научная библиотека диссертаций и авторефератов disserCat http://www.dissercat.com/content/metody-i-algoritmy-kompyuternoi-grafiki-dlya-modelirovaniya-vodnoi-poverkhnosti-v-sistemakh-#ixzz4HKJGwBed
