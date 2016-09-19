@@ -345,7 +345,7 @@ HRESULT InitGeometry()
     if( FAILED( hr ) )
     {
         MessageBox( NULL,
-                    L"The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK );
+                    L"The FX file cannot be compiled.45444444444  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK );
         return hr;
     }
 
@@ -386,27 +386,10 @@ HRESULT InitGeometry()
 const int u=32;
 const int v=32;
 //--------------------------------------------------------------------------------------
-float hmap[u][v];
-//--------------------------------------------------------------------------------------
 // Значение полного количества индексов потребуется для рендера буфера
 //--------------------------------------------------------------------------------------
 const int IndicesCount=(u-1)*(v-1)*6;
-//--------------------------------------------------------------------------------------
-// Заполняем карту вершин произвольной функцией
-//--------------------------------------------------------------------------------------
-void GenerateHMap()
-{
-	for (int i=0; i<u; i++)
-	for (int j=0; j<v; j++)
-	{
-		float x=((float)i/(float)u)-0.25f;
-		float y=((float)j/(float)v)-0.25f;
-		float xx=((float)i/(float)u)-0.5f;
-		float yy=((float)j/(float)v)-0.5f;
-		float h=xx*yy*xx*yy+0.3f/(1.0f+(x*x+y*y)*50.0f);
-		hmap[i][j]=h;
-	}
-}
+
 //--------------------------------------------------------------------------------------
 // Процедурная генерация
 //--------------------------------------------------------------------------------------
@@ -422,16 +405,11 @@ HRESULT GenerateLandscape()
 	// Индексный буфер
 	DWORD indices[IndicesCount];
 
-	// Генерация карты высот
-	GenerateHMap();
-
 	// Генерация сетки вершин для вершинного буфера
 	for (int i=0; i<u; i++)
 	for (int j=0; j<v; j++)
 	{
-		float x=(float)i/(float)u-0.5f;
-		float y=(float)j/(float)v-0.5f; float c=7.5f;
-		vertices[j*u+i].pos=XMFLOAT3(x*c,hmap[i][j]*c,y*c);
+		vertices[j*u+i].pos=XMFLOAT3(i,0,j);
 		vertices[j*u+i].color=XMFLOAT4(1,1,1,1);
 		vertices[j*u+i].normal=XMFLOAT3(0,1,0);
 	}
