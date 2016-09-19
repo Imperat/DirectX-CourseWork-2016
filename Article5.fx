@@ -31,6 +31,7 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 	float3 vLightDirection=(-1,0,0.25);
 	float4 vLightColor=(1,1,1,1);
 	output.Color=saturate( dot( (float3)vLightDirection,output.Pos*0.5f) * vLightColor);
+	output.Pos[1] *= 2;
     return output;
 }
 
