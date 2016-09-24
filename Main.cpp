@@ -126,16 +126,16 @@ HRESULT InitWindow( HINSTANCE hInstance, int nCmdShow )
     wcex.hCursor = LoadCursor( NULL, IDC_ARROW );
     wcex.hbrBackground = ( HBRUSH )( COLOR_WINDOW + 1 );
     wcex.lpszMenuName = NULL;
-    wcex.lpszClassName = L"Article5";
+    wcex.lpszClassName = L"my_window";
     wcex.hIconSm = LoadIcon( wcex.hInstance, ( LPCTSTR )IDI_TUTORIAL1 );
     if( !RegisterClassEx( &wcex ) )
         return E_FAIL;
 
     // Create window
     g_hInst = hInstance;
-    RECT rc = { 0, 0, 533, 400 };
+    RECT rc = { 0, 0, 800, 600 };
     AdjustWindowRect( &rc, WS_OVERLAPPEDWINDOW, FALSE );
-    g_hWnd = CreateWindow( L"Article5", L"Урок 5: Процедурная генерация", WS_OVERLAPPEDWINDOW,
+    g_hWnd = CreateWindow( L"my_window", L"Ocean water surface", WS_OVERLAPPEDWINDOW,
                            CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
                            NULL );
     if( !g_hWnd )
