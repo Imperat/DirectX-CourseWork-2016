@@ -27,18 +27,19 @@ struct VS_OUTPUT
 VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 {
     VS_OUTPUT output = (VS_OUTPUT)0;
-	int u = 32;
-	int v = 32;
+	int u = 64;
+	int v = 64;
 	float i = Pos[0];
 	float j = Pos[2];
 	float x = ((float)i / (float)u) - 0.25f;
 	float y = ((float)j / (float)v) - 0.25f;
 	float xx = ((float)i / (float)u) - 0.5f;
 	float yy = ((float)j / (float)v) - 0.5f;
-	float h = xx*yy*xx*yy + 0.3f / (1.0f + (x*x + y*y)*50.0f);
-	Pos[0] = Pos[0] / 32 - 0.5f;
-	Pos[1] = h * sin(time);
-	Pos[2] = Pos[2] / 32 - 0.5f;
+	float w = 1;
+	float h = 0.01 * sin(dot(float2(1, 0), float2(i, j))*w + time*3);
+	Pos[0] = Pos[0] / 64 - 0.5f;
+	Pos[1] = h;
+	Pos[2] = Pos[2] / 64 - 0.5f;
 	Pos[0] *= 7.5f;
 	Pos[1] *= 7.5f;
 	Pos[2] *= 7.5f;

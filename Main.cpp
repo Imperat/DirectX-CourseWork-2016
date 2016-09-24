@@ -526,9 +526,9 @@ void Render()
     // Изменение позиции камеры на орбите
 	float radius=5.0f;
 	time+=0.0002f;
-
+	float n_time = 0.2f;
 	// Инициализация матрицы камеры из орбитальных данных её координат
-	XMVECTOR Eye = XMVectorSet( sin(time)*radius, 1.0f, -0.5f+cos(time)*radius*1.2f, 0.0f );
+	XMVECTOR Eye = XMVectorSet( sin(n_time)*radius, 1.0f, -0.5f+cos(n_time)*radius*1.2f, 0.0f );
 	XMVECTOR At = XMVectorSet( 0.0f, 0.0f, 0.0f, 0.0f );
 	XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
 	g_View = XMMatrixLookAtLH( Eye, At, Up );
