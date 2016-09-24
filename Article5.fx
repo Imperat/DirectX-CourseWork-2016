@@ -45,9 +45,11 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
     output.Pos = mul( output.Pos, View );
     output.Pos = mul( output.Pos, Projection );
 	float3 vLightDirection=(-1,0,0.25);
-	float4 vLightColor=(1,1,1,1);
+	float4 vLightColor=(0.5,0.5,1,0.7);
 	output.Color=saturate( dot( (float3)vLightDirection,output.Pos*0.5f) * vLightColor);
 	output.Kefal = true;
+	output.Color += float4(0.2, 0.2, 0.4, 1);
+	output.Color /= 2;
     return output;
 }
 

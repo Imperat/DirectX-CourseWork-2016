@@ -375,6 +375,7 @@ HRESULT InitGeometry()
 	g_Projection = XMMatrixPerspectiveFovLH( XM_PIDIV2, width / (FLOAT)height, 0.01f, 100.0f );
 
 	//Процедурная генерация для ландшафта
+
 	GenerateLandscape();
 
     return S_OK;
@@ -383,8 +384,8 @@ HRESULT InitGeometry()
 //--------------------------------------------------------------------------------------
 // Определение констант
 //--------------------------------------------------------------------------------------
-const int u=32;
-const int v=32;
+const int u=64;
+const int v=64;
 //--------------------------------------------------------------------------------------
 // Значение полного количества индексов потребуется для рендера буфера
 //--------------------------------------------------------------------------------------
@@ -522,7 +523,7 @@ void Render()
     //
     // Очистка рендер-таргета
     //
-    float ClearColor[4] = { 0.0f, 0.9f, 0.5f, 1.0f }; // цвет
+    float ClearColor[4] = { 0.0f, 0.0f, 0.0f, 1.0f }; // цвет
     g_pImmediateContext->ClearRenderTargetView( g_pRenderTargetView, ClearColor );
     g_pImmediateContext->ClearDepthStencilView( g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );
 
