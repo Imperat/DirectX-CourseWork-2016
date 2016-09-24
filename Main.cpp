@@ -303,7 +303,7 @@ HRESULT InitGeometry()
     // Загружаем шейдеры
     ID3DBlob* pVSBlob = NULL;
 	HRESULT hr;
-    hr = CompileShaderFromFile( L"Article5.fx", "VS", "vs_4_0", &pVSBlob );
+    hr = CompileShaderFromFile( L"Shader.fx", "VS", "vs_4_0", &pVSBlob );
     if( FAILED( hr ) )
     {
         MessageBox( NULL,
@@ -322,8 +322,6 @@ HRESULT InitGeometry()
     // Определение формата вершинного буфера
     D3D11_INPUT_ELEMENT_DESC layout[] =
     {
-       // { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-       // { "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
         { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
         { "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
         { "NORMAL", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 28, D3D11_INPUT_PER_VERTEX_DATA, 0 },
@@ -342,11 +340,11 @@ HRESULT InitGeometry()
 
 	// Пиксельный шейдер
 	ID3DBlob* pPSBlob = NULL;
-    hr = CompileShaderFromFile( L"Article5.fx", "PS", "ps_4_0", &pPSBlob );
+    hr = CompileShaderFromFile( L"Shader.fx", "PS", "ps_4_0", &pPSBlob );
     if( FAILED( hr ) )
     {
         MessageBox( NULL,
-                    L"The FX file cannot be compiled.45444444444  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK );
+                    L"The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK );
         return hr;
     }
 
@@ -513,12 +511,9 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 }
 
 //--------------------------------------------------------------------------------------
-float orbit=0.0f;
+float time=0.0f;
 //--------------------------------------------------------------------------------------
 
-//--------------------------------------------------------------------------------------
-// Рендер
-//--------------------------------------------------------------------------------------
 void Render()
 {
     //
@@ -530,10 +525,10 @@ void Render()
 
     // Изменение позиции камеры на орбите
 	float radius=5.0f;
-	orbit+=0.0002f;
+	time+=0.0002f;
 
 	// Инициализация матрицы камеры из орбитальных данных её координат
-	XMVECTOR Eye = XMVectorSet( sin(orbit)*radius, 1.0f, -0.5f+cos(orbit)*radius*1.2f, 0.0f );
+	XMVECTOR Eye = XMVectorSet( sin(time)*radius, 1.0f, -0.5f+cos(time)*radius*1.2f, 0.0f );
 	XMVECTOR At = XMVectorSet( 0.0f, 0.0f, 0.0f, 0.0f );
 	XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
 	g_View = XMMatrixLookAtLH( Eye, At, Up );
@@ -545,7 +540,7 @@ void Render()
 	cb.mWorld = XMMatrixTranspose( g_World);
 	cb.mView = XMMatrixTranspose( g_View );
 	cb.mProjection = XMMatrixTranspose( g_Projection );
-	cb.time = orbit;
+	cb.time = time;
 	g_pImmediateContext->UpdateSubresource( g_pConstantBuffer, 0, NULL, &cb, 0, 0 );
 
     //
