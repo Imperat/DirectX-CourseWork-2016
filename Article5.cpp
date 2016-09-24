@@ -26,6 +26,7 @@ struct ConstantBuffer
 	XMMATRIX mWorld;
 	XMMATRIX mView;
 	XMMATRIX mProjection;
+	float time;
 };
 
 
@@ -544,6 +545,7 @@ void Render()
 	cb.mWorld = XMMatrixTranspose( g_World);
 	cb.mView = XMMatrixTranspose( g_View );
 	cb.mProjection = XMMatrixTranspose( g_Projection );
+	cb.time = orbit;
 	g_pImmediateContext->UpdateSubresource( g_pConstantBuffer, 0, NULL, &cb, 0, 0 );
 
     //

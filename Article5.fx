@@ -10,6 +10,7 @@ cbuffer ConstantBuffer : register( b0 )
 	matrix World;
 	matrix View;
 	matrix Projection;
+	float time;
 }
 
 //--------------------------------------------------------------------------------------
@@ -36,7 +37,7 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 	float yy = ((float)j / (float)v) - 0.5f;
 	float h = xx*yy*xx*yy + 0.3f / (1.0f + (x*x + y*y)*50.0f);
 	Pos[0] = Pos[0] / 32 - 0.5f;
-	Pos[1] = h;
+	Pos[1] = h * sin(time);
 	Pos[2] = Pos[2] / 32 - 0.5f;
 	Pos[0] *= 7.5f;
 	Pos[1] *= 7.5f;
@@ -49,7 +50,6 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 	output.Color=saturate( dot( (float3)vLightDirection,output.Pos*0.5f) * vLightColor);
 	output.Kefal = true;
 	output.Color += float4(0.2, 0.2, 0.4, 1);
-	output.Color /= 2;
     return output;
 }
 
