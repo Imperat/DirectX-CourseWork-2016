@@ -41,13 +41,15 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 	*/
 	// X = X0 - (K/k)(a*sin(K*X0 - wt);
 	// y = a * cos (K*X0 - wt);
-	float h = 0.01 * sin(dot(K, X0) + w*time*3);
+	//float h = 0.01 * sin(dot(K, X0) + w*time*3);
+
+	float2 X = X0 - K * a*sin(dot(K, X0) - w*time * 3);
+	float  y = a * cos(dot(K, X0) - w*time * 3);
+	Pos[0] = X[0] / 64 - 0.5f;
+	Pos[2] = X[1] / 64 - 0.5f;
+	Pos[1] = y;
 
 
-	//
-	Pos[0] = Pos[0] / 64 - 0.5f;
-	Pos[1] = h;
-	Pos[2] = Pos[2] / 64 - 0.5f;
 	Pos[0] *= 7.5f;
 	Pos[1] *= 7.5f;
 	Pos[2] *= 7.5f;
