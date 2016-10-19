@@ -410,7 +410,7 @@ HRESULT GenerateLandscape()
 	for (int j=0; j<v; j++)
 	{
 		vertices[j*u+i].pos=XMFLOAT3(i,0,j);
-		vertices[j*u+i].color=XMFLOAT4(1,1,1,1);
+		vertices[j*u+i].color=XMFLOAT4(0.6,0.6,1,1);
 		vertices[j*u+i].normal=XMFLOAT3(0,1,0);
 	}
 	//Генерация  индексного буфера
