@@ -31,24 +31,34 @@ VS_OUTPUT VS( float4 Pos : POSITION, float4 Color : COLOR )
 	int u = 128;
 	int v = 128;
 
+	float s_X = 0;
+	float s_Y = 0;
+	float s_Z = 0;
+
+
 	float2 X0 = float2(Pos[0], Pos[2]);
+		float height = 0;
+		for (int i = 0; i < 3; i++){
+			float2 K = float2(1, i);
+				float w = 1.5; // w is frequency
+			float a = 0.01; // a is amplitude
+			/*
+				K is a wave vector
 
-	float2 K =  float2(1, 0);           
-	float w = 1.15; // w is frequency
-	float a = 0.01; // a is amplitude
-	/*
-	    K is a wave vector
+				*/
+			// X = X0 - (K/k)(a*sin(K*X0 - wt);
+			// y = a * cos (K*X0 - wt);
+			//float h = 0.01 * sin(dot(K, X0) + w*time*3);
 
-	*/
-	// X = X0 - (K/k)(a*sin(K*X0 - wt);
-	// y = a * cos (K*X0 - wt);
-	//float h = 0.01 * sin(dot(K, X0) + w*time*3);
-
-	float2 X = X0 - K * a*sin(dot(K, X0) - w*time * 3);
-	float  y = a * cos(dot(K, X0) - w*time * 3);
-	Pos[0] = X[0] / 64 - 0.5f;
-	Pos[2] = X[1] / 64 - 0.5f;
-	Pos[1] = y;
+			float2 X = X0 - K * a*sin(dot(K, X0) - w*time * 3);
+				float  y = a * cos(dot(K, X0) - w*time * 3);
+			s_X += X[0] / 64 - 0.5f;
+			s_Y += X[1] / 64 - 0.5f;
+			s_Z += y;
+		}
+		Pos[0] = s_X;
+		Pos[2] = s_Y;
+		Pos[1] = s_Z;
 
 
 	/*Pos[0] *= 7.5f;

@@ -9,7 +9,7 @@
 #include <xnamath.h>
 #include "resource.h"
 
-
+#define lines D3D11_PRIMITIVE_TOPOLOGY_LINELIST 
 //--------------------------------------------------------------------------------------
 // Структуры
 //--------------------------------------------------------------------------------------
@@ -133,7 +133,7 @@ HRESULT InitWindow( HINSTANCE hInstance, int nCmdShow )
 
     // Create window
     g_hInst = hInstance;
-    RECT rc = { 0, 0, 800, 600 };
+    RECT rc = { 0, 0, 1024, 768 };
     AdjustWindowRect( &rc, WS_OVERLAPPEDWINDOW, FALSE );
     g_hWnd = CreateWindow( L"my_window", L"Ocean water surface", WS_OVERLAPPEDWINDOW,
                            CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
@@ -383,7 +383,7 @@ HRESULT InitGeometry()
 //--------------------------------------------------------------------------------------
 // Определение констант
 //--------------------------------------------------------------------------------------
-const int u=64;
+const int u=128;
 const int v=64;
 //--------------------------------------------------------------------------------------
 // Значение полного количества индексов потребуется для рендера буфера
@@ -460,7 +460,7 @@ HRESULT GenerateLandscape()
     g_pImmediateContext->IASetIndexBuffer( g_pIndexBuffer, DXGI_FORMAT_R32_UINT, 0 );
 
     // Установка топологии буфера
-    g_pImmediateContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
+	g_pImmediateContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
 	return S_OK;
 }
 
