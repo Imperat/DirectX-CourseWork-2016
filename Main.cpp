@@ -9,7 +9,7 @@
 #include <xnamath.h>
 #include "resource.h"
 
-
+#define lines D3D11_PRIMITIVE_TOPOLOGY_LINELIST 
 //--------------------------------------------------------------------------------------
 // Структуры
 //--------------------------------------------------------------------------------------
@@ -64,6 +64,12 @@ HRESULT GenerateLandscape();
 void CleanupDevice();
 LRESULT CALLBACK    WndProc( HWND, UINT, WPARAM, LPARAM );
 void Render();
+
+float radius = 5.0f;
+float n_time = 0.1f;
+float x_pos = 0;
+float y_pos = 0;
+float z_pos = 1.0f;
 
 
 //--------------------------------------------------------------------------------------
@@ -133,7 +139,7 @@ HRESULT InitWindow( HINSTANCE hInstance, int nCmdShow )
 
     // Create window
     g_hInst = hInstance;
-    RECT rc = { 0, 0, 800, 600 };
+    RECT rc = { 0, 0, 1024, 768 };
     AdjustWindowRect( &rc, WS_OVERLAPPEDWINDOW, FALSE );
     g_hWnd = CreateWindow( L"my_window", L"Ocean water surface", WS_OVERLAPPEDWINDOW,
                            CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
@@ -383,7 +389,7 @@ HRESULT InitGeometry()
 //--------------------------------------------------------------------------------------
 // Определение констант
 //--------------------------------------------------------------------------------------
-const int u=64;
+const int u=128;
 const int v=64;
 //--------------------------------------------------------------------------------------
 // Значение полного количества индексов потребуется для рендера буфера
@@ -410,7 +416,7 @@ HRESULT GenerateLandscape()
 	for (int j=0; j<v; j++)
 	{
 		vertices[j*u+i].pos=XMFLOAT3(i,0,j);
-		vertices[j*u+i].color=XMFLOAT4(1,1,1,1);
+		vertices[j*u+i].color=XMFLOAT4(0.6,0.6,1,1);
 		vertices[j*u+i].normal=XMFLOAT3(0,1,0);
 	}
 	//Генерация  индексного буфера
@@ -460,7 +466,7 @@ HRESULT GenerateLandscape()
     g_pImmediateContext->IASetIndexBuffer( g_pIndexBuffer, DXGI_FORMAT_R32_UINT, 0 );
 
     // Установка топологии буфера
-    g_pImmediateContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
+	g_pImmediateContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
 	return S_OK;
 }
 
@@ -502,6 +508,28 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
         case WM_DESTROY:
             PostQuitMessage( 0 );
             break;
+		case WM_KEYDOWN:
+			switch (wParam){
+			case VK_NUMPAD8:
+				z_pos += 0.1;
+				break;
+			case VK_NUMPAD2:
+				z_pos -= 0.1;
+				break;
+			case VK_LEFT:
+				x_pos += 0.1;
+				break;
+			case VK_RIGHT:
+				x_pos -= 0.1;
+				break;
+			case VK_DOWN: 
+				y_pos += 0.1;
+				break;
+			case VK_UP:
+				y_pos -= 0.1;
+				break;
+			}
+			break;
 
         default:
             return DefWindowProc( hWnd, message, wParam, lParam );
@@ -524,11 +552,10 @@ void Render()
     g_pImmediateContext->ClearDepthStencilView( g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );
 
     // Изменение позиции камеры на орбите
-	float radius=5.0f;
+	
 	time+=0.0002f;
-
 	// Инициализация матрицы камеры из орбитальных данных её координат
-	XMVECTOR Eye = XMVectorSet( sin(time)*radius, 1.0f, -0.5f+cos(time)*radius*1.2f, 0.0f );
+	XMVECTOR Eye = XMVectorSet( x_pos, z_pos, y_pos, 1.0f );
 	XMVECTOR At = XMVectorSet( 0.0f, 0.0f, 0.0f, 0.0f );
 	XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
 	g_View = XMMatrixLookAtLH( Eye, At, Up );
