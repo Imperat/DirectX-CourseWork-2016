@@ -65,6 +65,12 @@ void CleanupDevice();
 LRESULT CALLBACK    WndProc( HWND, UINT, WPARAM, LPARAM );
 void Render();
 
+float radius = 5.0f;
+float n_time = 0.1f;
+float x_pos = 0;
+float y_pos = 0;
+float z_pos = 1.0f;
+
 
 //--------------------------------------------------------------------------------------
 // Главная функция программы. Происходят все инициализации, и затем выполняется
@@ -502,6 +508,28 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
         case WM_DESTROY:
             PostQuitMessage( 0 );
             break;
+		case WM_KEYDOWN:
+			switch (wParam){
+			case VK_NUMPAD8:
+				z_pos += 0.1;
+				break;
+			case VK_NUMPAD2:
+				z_pos -= 0.1;
+				break;
+			case VK_LEFT:
+				x_pos += 0.1;
+				break;
+			case VK_RIGHT:
+				x_pos -= 0.1;
+				break;
+			case VK_DOWN: 
+				y_pos += 0.1;
+				break;
+			case VK_UP:
+				y_pos -= 0.1;
+				break;
+			}
+			break;
 
         default:
             return DefWindowProc( hWnd, message, wParam, lParam );
@@ -524,11 +552,10 @@ void Render()
     g_pImmediateContext->ClearDepthStencilView( g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );
 
     // Изменение позиции камеры на орбите
-	float radius=5.0f;
+	
 	time+=0.0002f;
-	float n_time = 0.2f;
 	// Инициализация матрицы камеры из орбитальных данных её координат
-	XMVECTOR Eye = XMVectorSet( sin(n_time)*radius, 1.0f, -0.5f+cos(n_time)*radius*1.2f, 0.0f );
+	XMVECTOR Eye = XMVectorSet( x_pos, z_pos, y_pos, 1.0f );
 	XMVECTOR At = XMVectorSet( 0.0f, 0.0f, 0.0f, 0.0f );
 	XMVECTOR Up = XMVectorSet( 0.0f, 1.0f, 0.0f, 0.0f );
 	g_View = XMMatrixLookAtLH( Eye, At, Up );
