@@ -49,6 +49,8 @@ ID3D11InputLayout*      g_pVertexLayout = NULL;
 ID3D11Buffer*           g_pVertexBuffer = NULL;
 ID3D11Buffer*           g_pIndexBuffer = NULL;
 ID3D11Buffer*           g_pConstantBuffer = NULL;
+ID3D11ShaderResourceView*g_pTextureRV[3] = { NULL, NULL, NULL };
+ID3D11SamplerState*     g_pSamplerLinear = NULL;
 XMMATRIX                g_World;
 XMMATRIX                g_View;
 XMMATRIX                g_Projection;
@@ -381,6 +383,10 @@ HRESULT InitGeometry()
 
 	//Процедурная генерация для ландшафта
 
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"tiles.png", NULL, NULL, &g_pTextureRV[0], NULL);
+	if (FAILED(hr))
+		return hr;
+
 	GenerateLandscape();
 
     return S_OK;
@@ -451,6 +457,20 @@ HRESULT GenerateLandscape()
     UINT stride = sizeof( VERTEX );
     UINT offset = 0;
     g_pImmediateContext->IASetVertexBuffers( 0, 1, &g_pVertexBuffer, &stride, &offset );
+	g_pImmediateContext->PSSetShaderResources(1, 1, &g_pTextureRV[0]);
+	// Создание объекта состояний семплера
+	D3D11_SAMPLER_DESC sampDesc;
+	ZeroMemory(&sampDesc, sizeof(sampDesc));
+	sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+	sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+	sampDesc.ComparisonFunc = D3D11_COMPARISON_NEVER;
+	sampDesc.MinLOD = 0;
+	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
+	hr = g_pd3dDevice->CreateSamplerState(&sampDesc, &g_pSamplerLinear);
+	if (FAILED(hr))
+		return hr;
 
     bd.Usage = D3D11_USAGE_DEFAULT;
     bd.ByteWidth = sizeof( DWORD ) * IndicesCount;       
