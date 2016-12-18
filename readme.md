@@ -13,3 +13,9 @@ photorealistic model of ocean water and
 contribute to my Math, Computer Grapics
 and coders skills.
 
+Examples
+--------
+![Image alt](https://raw.githubusercontent.com/Imperat/DirectX-CourseWork-2016/master/examples/01.jpg)
+![Image alt](https://raw.githubusercontent.com/Imperat/DirectX-CourseWork-2016/master/examples/02.jpg)
+![Image alt](https://raw.githubusercontent.com/Imperat/DirectX-CourseWork-2016/master/examples/03.jpg)
+
